@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-md-2">
+        <app-slider></app-slider>
+    </div>
+    <div class="col-md-10">
+        <app-header-admin></app-header-admin>
+        <div>
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Tên loại</th>
+                        <th scope="col">Trạng thái</th>
+                        <th scope="col">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(cate of categorys; track cate.id){
+                    <tr>
+                        <th scope="row">{{ cate.id }}</th>
+
+                        <td>{{ cate.name }}</td>
+                        <td>
+                            <span>{{ cate.status === 'active' ? 'Hiện' : 'Ẩn' }}</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger" (click)="deleteCategory(cate.id)">Xóa</button>
+                            <span>&nbsp;</span> <!-- Khoảng trắng ngắn -->
+                            <button class="btn btn-warning" (click)="openDialog()">Sửa</button>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <app-footer-admin></app-footer-admin>
+        </div>
+    </div>
+</div>

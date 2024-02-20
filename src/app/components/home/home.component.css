@@ -1,0 +1,20 @@
+.full-width-banner {
+    display: flex;
+    justify-content: center;
+}
+
+.banner-img {
+    padding-top: 20px;
+    width: 93%; 
+}
+.container {
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    text-align: center; 
+}
+.number {
+    margin: 0 5px; 
+  }

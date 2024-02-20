@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-md-2">
+        <app-slider></app-slider>
+    </div>
+    <div class="col-md-10">
+        <app-header-admin></app-header-admin>
+        <div>
+            <div class="container m-5">
+                <h2>Thêm thể loại:</h2>
+                <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Tên thể loại</label>
+                        <input id="name" type="text" formControlName="name" class="form-control">
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <label for="status" class="form-label">Trạng thái</label>
+                            <select id="status" formControlName="status" class="form-control">
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-10 d-flex align-items-center justify-content-center">
+                        <!-- Main content goes here -->
+                        <button type="submit" class="btn btn-primary">Thêm</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div>
+            <app-footer-admin></app-footer-admin>
+        </div>
+    </div>
+</div>
