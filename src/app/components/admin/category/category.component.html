@@ -15,7 +15,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @for(cate of categorys; track cate.id){
+                    @for(cate of categoryList; track cate.id){
                     <tr>
                         <th scope="row">{{ cate.id }}</th>
 
@@ -24,9 +24,38 @@
                             <span>{{ cate.status === 'active' ? 'Hiện' : 'Ẩn' }}</span>
                         </td>
                         <td>
-                            <button class="btn btn-danger" (click)="deleteCategory(cate.id)">Xóa</button>
+                            <button class="btn btn-danger" (click)="deleteCategory(cate.id)">
+                                Xóa</button>
                             <span>&nbsp;</span> <!-- Khoảng trắng ngắn -->
-                            <button class="btn btn-warning" (click)="openDialog()">Sửa</button>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop" (click)="openDialog(cate.id)">
+                                Sửa
+                            </button>
+
+                            <!-- Modal 
+                            <div #exampleModal class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+                                data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticBackdropLabel">Chi tiết thể loại</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            ...
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                                (click)="close()">Đóng</button>
+                                            <button type="button" class="btn btn-primary">Lưu</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+-->
                         </td>
                     </tr>
                     }
